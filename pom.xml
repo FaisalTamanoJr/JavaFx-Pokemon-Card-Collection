@@ -61,7 +61,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.javafxpokemoncardcollection/com.example.javafxpokemoncardcollection.HelloApplication
+                                com.example.javafxpokemoncardcollection/com.example.javafxpokemoncardcollection.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
