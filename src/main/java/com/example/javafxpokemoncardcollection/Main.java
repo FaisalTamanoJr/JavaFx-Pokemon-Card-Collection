@@ -11,19 +11,28 @@
 package com.example.javafxpokemoncardcollection;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main extends Application {
+    public static final String pokemonData = "Pokemon.txt";
+    protected PokemonCards pokemonDeck; // Card collection object
+    protected ObservableList<Pokemon> decksData;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        pokemonDeck = new PokemonCards();
+        decksData = FXCollections.observableList(pokemonDeck.stats);
+
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-        Scene mainMenu = new Scene(root,600,400); // Initialize the Menu
+        Scene mainMenu = new Scene(root); // Initialize the Menu
 
         /* Main Menu Scene */
         primaryStage.setTitle("Pokemon Card Collection App");
