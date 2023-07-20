@@ -24,12 +24,12 @@ import java.util.ArrayList;
 public class Main extends Application {
     public static final String pokemonData = "Pokemon.txt";
     protected PokemonCards pokemonDeck; // Card collection object
-    protected ObservableList<Pokemon> decksData;
+    protected static ObservableList<Pokemon> decksData;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
         pokemonDeck = new PokemonCards();
-        decksData = FXCollections.observableList(pokemonDeck.stats);
+        decksData = FXCollections.observableArrayList(pokemonDeck.stats);
 
         Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         Scene mainMenu = new Scene(root); // Initialize the Menu
